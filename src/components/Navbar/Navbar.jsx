@@ -19,11 +19,11 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import useStyles from "./styles";
-import { Sidebar } from "../index";
+import { Sidebar, Search } from "../index";
 import { setUser } from "../../features/auth";
 import { fetchToken, createSessionId, moviesApi } from "../../utils/index";
 import { DarkModeContext } from "../../utils/ToggleTheme";
-
+import mobileLogo from "../../assets/images/logo.ico";
 const logo =
   "https://fontmeme.com/permalink/230307/96ba8bc6614a796a8a36a76418fca378.png";
 
@@ -66,8 +66,13 @@ function Navbar() {
       <AppBar position="fixed">
         <Toolbar className={classes.toolbar}>
           <Link to="/" className={classes.imageLink}>
-            <img className={classes.image} src={logo} alt="Moviehub Logo" />
+            <img
+              className={classes.image}
+              src={!isMobile ? logo : mobileLogo}
+              alt="Moviehub Logo"
+            />
           </Link>
+          {!isMobile && <Search />}
           <div className={classes.linkContainer}>
             <IconButton
               color="inherit"
@@ -116,6 +121,7 @@ function Navbar() {
               </Button>
             )}
           </div>
+          {isMobile && <Search />}
         </Toolbar>
       </AppBar>
       <div>
