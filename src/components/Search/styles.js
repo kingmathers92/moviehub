@@ -12,13 +12,6 @@ export default makeStyles((theme) => ({
     marginLeft: 0,
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(1),
-      width: "auto",
-    },
-    [theme.breakpoints.down("sm")]: {
-      width: "15ch",
-      "&:focus": {
-        width: "20ch",
-      },
     },
   },
   searchIcon: {
@@ -49,9 +42,14 @@ export default makeStyles((theme) => ({
       // vertical padding + font size from searchIcon
       paddingLeft: `calc(1em + ${theme.spacing(4)})`,
       transition: theme.transitions.create("width"),
-      width: "100%",
+      [theme.breakpoints.down("sm")]: {
+        width: "8ch",
+        "&:focus": {
+          width: "10ch",
+        },
+      },
       [theme.breakpoints.up("sm")]: {
-        width: "12ch",
+        width: "15ch",
         "&:focus": {
           width: "20ch",
         },
