@@ -1,6 +1,7 @@
 import React from "react";
 import { Typography, Grid, Grow, Tooltip, Rating } from "@mui/material";
 import { Link } from "react-router-dom";
+import CircleRating from "../CircleRating/CircleRating";
 
 import useStyles from "./styles";
 
@@ -20,14 +21,18 @@ function Movie({ movie, i }) {
             alt={movie.title}
             className={classes.image}
           />
+          <Tooltip
+            className={classes.progressBar}
+            disableTouchListener
+            title={`${movie.vote_average} / 10`}
+          >
+            <div>
+              <CircleRating rating={movie.vote_average.toFixed(1)} />
+            </div>
+          </Tooltip>
           <Typography className={classes.title} variant="h5">
             {movie.title}
           </Typography>
-          <Tooltip disableTouchListener title={`${movie.vote_average} / 10`}>
-            <div>
-              <Rating readOnly value={movie.vote_average / 2} precision={0.1} />
-            </div>
-          </Tooltip>
         </Link>
       </Grow>
     </Grid>

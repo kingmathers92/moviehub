@@ -1,37 +1,46 @@
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from "@mui/styles";
 
 export default makeStyles((theme) => ({
   movie: {
-    padding: '10px',
+    padding: "10px",
+    position: "relative",
   },
   title: {
     color: theme.palette.text.primary,
-    textOverflow: 'ellipsis',
-    width: '230px',
-    overflow: 'hidden',
-    whiteSpace: 'nowrap',
-    marginTop: '10px',
+    textOverflow: "ellipsis",
+    width: "230px",
+    overflow: "hidden",
+    whiteSpace: "nowrap",
+    marginTop: "10px",
     marginBottom: 0,
-    textAlign: 'center',
+    textAlign: "center",
   },
   links: {
-    alignItems: 'center',
-    fontWeight: 'bolder',
-    textDecoration: 'none',
-    [theme.breakpoints.up('xs')]: {
-      display: 'flex',
-      flexDirection: 'column',
+    alignItems: "center",
+    fontWeight: "bolder",
+    textDecoration: "none",
+    position: "relative",
+    display: "inline-block",
+    [theme.breakpoints.up("xs")]: {
+      display: "flex",
+      flexDirection: "column",
     },
-    '&:hover': {
-      cursor: 'pointer',
+    "&:hover": {
+      cursor: "pointer",
     },
   },
   image: {
-    borderRadius: '20px',
-    height: '300px',
-    marginBottom: '10px',
-    '&:hover': {
-      transform: 'scale(1.05)',
+    borderRadius: "12px",
+    height: "300px",
+    marginBottom: "10px",
+    "&:hover": {
+      transform: "scale(1.05)",
     },
+  },
+  progressBar: {
+    position: "relative",
+    bottom: "50px",
+    left: "-90px",
+    padding: "10px",
   },
 }));
