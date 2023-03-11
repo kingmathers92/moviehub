@@ -9,6 +9,7 @@ import {
   Box,
   CircularProgress,
   IconButton,
+  useMediaQuery,
 } from "@mui/material";
 import { Brightness4, Brightness7 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
@@ -29,6 +30,7 @@ const categories = [
 function Sidebar({ setMobileOpen }) {
   const theme = useTheme();
   const darkMode = useContext(DarkModeContext);
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -44,13 +46,15 @@ function Sidebar({ setMobileOpen }) {
   return (
     <>
       <Divider className={classes.divider} />
-      <IconButton
-        color="inherit"
-        sx={{ ml: 1 }}
-        onClick={darkMode.toggleColorMode}
-      >
-        {theme.palette.mode === "dark" ? <Brightness7 /> : <Brightness4 />}
-      </IconButton>
+      {isMobile && (
+        <IconButton
+          color="inherit"
+          sx={{ ml: 1 }}
+          onClick={darkMode.toggleColorMode}
+        >
+          {theme.palette.mode === "dark" ? <Brightness7 /> : <Brightness4 />}
+        </IconButton>
+      )}
       <List>
         <ListSubheader>Categories</ListSubheader>
         {categories.map(({ label, value }) => (

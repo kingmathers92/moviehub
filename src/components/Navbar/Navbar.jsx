@@ -7,7 +7,6 @@ import {
   Button,
   Avatar,
   useMediaQuery,
-  Box,
 } from "@mui/material";
 import {
   Menu,
@@ -75,17 +74,19 @@ function Navbar() {
           </Link>
           <Search />
           <div className={classes.linkContainer}>
-            <IconButton
-              color="inherit"
-              sx={{ ml: 1 }}
-              onClick={darkMode.toggleColorMode}
-            >
-              {theme.palette.mode === "dark" ? (
-                <Brightness7 />
-              ) : (
-                <Brightness4 />
-              )}
-            </IconButton>
+            {!isMobile && (
+              <IconButton
+                color="inherit"
+                sx={{ ml: 1 }}
+                onClick={darkMode.toggleColorMode}
+              >
+                {theme.palette.mode === "dark" ? (
+                  <Brightness7 />
+                ) : (
+                  <Brightness4 />
+                )}
+              </IconButton>
+            )}
             {isMobile && (
               <IconButton
                 color="inherit"
