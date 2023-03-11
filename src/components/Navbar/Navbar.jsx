@@ -7,6 +7,7 @@ import {
   Button,
   Avatar,
   useMediaQuery,
+  Box,
 } from "@mui/material";
 import {
   Menu,
@@ -72,6 +73,7 @@ function Navbar() {
               alt="Moviehub Logo"
             />
           </Link>
+          {isMobile && <Search />}
           {!isMobile && <Search />}
           <div className={classes.linkContainer}>
             <IconButton
@@ -121,7 +123,6 @@ function Navbar() {
               </Button>
             )}
           </div>
-          {isMobile && <Search />}
         </Toolbar>
       </AppBar>
       <div>

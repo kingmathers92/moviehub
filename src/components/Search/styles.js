@@ -14,6 +14,12 @@ export default makeStyles((theme) => ({
       marginLeft: theme.spacing(1),
       width: "auto",
     },
+    [theme.breakpoints.down("sm")]: {
+      width: "15ch",
+      "&:focus": {
+        width: "20ch",
+      },
+    },
   },
   searchIcon: {
     padding: theme.spacing(0, 2),

@@ -6,11 +6,12 @@ export default makeStyles((theme) => ({
   toolbar: {
     height: "60px",
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "flex-grow",
     alignItems: "center",
     [theme.breakpoints.down("sm")]: {
-      marginLeft: 0,
-      flexWrap: "wrap",
+      display: "flex",
+      justifyContent: "flex-grow",
+      alignItems: "center",
     },
   },
   menuButton: {

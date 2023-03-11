@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import {
   Divider,
   List,
@@ -8,13 +8,17 @@ import {
   ListItemIcon,
   Box,
   CircularProgress,
+  IconButton,
 } from "@mui/material";
+import { Brightness4, Brightness7 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import useStyles from "./styles";
 import { useGetGenresQuery } from "../../services/TMDB";
 import { selectGenreOrCategory } from "../../features/genreOrCategory";
 import genreIcons from "../../assets/genres";
+import { useTheme } from "@mui/material/styles";
+import { DarkModeContext } from "../../utils/ToggleTheme";
 
 const categories = [
   { label: "Popular", value: "popular" },
@@ -23,6 +27,9 @@ const categories = [
 ];
 
 function Sidebar({ setMobileOpen }) {
+  const theme = useTheme();
+  const darkMode = useContext(DarkModeContext);
+
   const classes = useStyles();
   const dispatch = useDispatch();
   const { data, isFetching } = useGetGenresQuery();
@@ -37,6 +44,13 @@ function Sidebar({ setMobileOpen }) {
   return (
     <>
       <Divider className={classes.divider} />
+      <IconButton
+        color="inherit"
+        sx={{ ml: 1 }}
+        onClick={darkMode.toggleColorMode}
+      >
+        {theme.palette.mode === "dark" ? <Brightness7 /> : <Brightness4 />}
+      </IconButton>
       <List>
         <ListSubheader>Categories</ListSubheader>
         {categories.map(({ label, value }) => (
