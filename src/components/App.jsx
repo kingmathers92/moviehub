@@ -1,7 +1,7 @@
 import React from "react";
 import { CssBaseline } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
-import { Navbar, Movies, MovieInfo, Actors } from "./index";
+import { Navbar, Movies, MovieInfo, Actors, Profile } from "./index";
 import useStyles from "./styles";
 import ToggleTheme from "../utils/ToggleTheme";
 
@@ -19,7 +19,7 @@ function App() {
             <Route exact path="/approved" element={<Movies />} />
             <Route exact path="/movie/:id" element={<MovieInfo />} />
             <Route exact path="/actors/:id" element={<Actors />} />
-            {/* <Route exact path="/profile/:id" element={<Profile />} /> */}
+            <Route exact path="/profile/:id" element={<Profile />} />
           </Routes>
         </main>
       </div>
