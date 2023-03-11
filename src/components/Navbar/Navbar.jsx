@@ -73,8 +73,7 @@ function Navbar() {
               alt="Moviehub Logo"
             />
           </Link>
-          {isMobile && <Search />}
-          {!isMobile && <Search />}
+          <Search />
           <div className={classes.linkContainer}>
             <IconButton
               color="inherit"
