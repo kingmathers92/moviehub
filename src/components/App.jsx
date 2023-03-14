@@ -7,6 +7,7 @@ import ToggleTheme from "../utils/ToggleTheme";
 
 function App() {
   const classes = useStyles();
+
   return (
     <ToggleTheme>
       <div className={classes.root}>

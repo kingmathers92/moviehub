@@ -32,8 +32,10 @@ import {
 } from "../../services/TMDB";
 import { selectGenreOrCategory } from "../../features/genreOrCategory";
 import genreIcons from "../../assets/genres";
+import { useTheme } from "@mui/material/styles";
 
 function MovieInfo() {
+  const theme = useTheme();
   const classes = useStyles();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
@@ -86,7 +88,6 @@ function MovieInfo() {
 
     setIsMovieFavorited((prev) => !prev);
   };
-  console.log(data?.poster_path);
 
   const addToWatchList = async () => {
     await axios.post(
@@ -213,8 +214,9 @@ function MovieInfo() {
         <Grid item container style={{ marginTop: "2rem" }}>
           <div className={classes.buttonContainer}>
             <Grid item xs={12} sm={6} className={classes.buttonContainer}>
-              <ButtonGroup size="small" variant="outlined">
+              <ButtonGroup size="small" variant="outlined !important">
                 <Button
+                  borderColor="black"
                   target="_blank"
                   rel="noopener noreferrer"
                   href={data?.homepage}
@@ -240,7 +242,11 @@ function MovieInfo() {
               </ButtonGroup>
             </Grid>
             <Grid item xs={12} sm={6} className={classes.buttonContainer}>
-              <ButtonGroup size="small" variant="outlined">
+              <ButtonGroup
+                size="small"
+                variant="outlined !important"
+                classname={classes.btnGroup}
+              >
                 <Button
                   onClick={addToFavorites}
                   endIcon={

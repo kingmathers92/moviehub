@@ -1,5 +1,6 @@
 import React from "react";
 import { Typography, Box } from "@mui/material";
+import { Remove } from "@mui/icons-material";
 
 import useStyles from "./styles";
 import { Movie } from "../index";
