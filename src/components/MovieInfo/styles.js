@@ -52,7 +52,6 @@ export default makeStyles((theme) => ({
     borderRadius: "10px",
   },
   buttonContainer: {
-    //backgroundColor: "inherit",
     display: "flex",
     justifyContent: "space-between",
     width: "100%",
