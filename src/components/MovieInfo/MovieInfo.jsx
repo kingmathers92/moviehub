@@ -32,10 +32,8 @@ import {
 } from "../../services/TMDB";
 import { selectGenreOrCategory } from "../../features/genreOrCategory";
 import genreIcons from "../../assets/genres";
-import { useTheme } from "@mui/material/styles";
 
 function MovieInfo() {
-  const theme = useTheme();
   const classes = useStyles();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
