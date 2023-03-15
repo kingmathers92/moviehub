@@ -214,7 +214,6 @@ function MovieInfo() {
             <Grid item xs={12} sm={6} className={classes.buttonContainer}>
               <ButtonGroup size="small" variant="outlined !important">
                 <Button
-                  borderColor="black"
                   target="_blank"
                   rel="noopener noreferrer"
                   href={data?.homepage}
@@ -243,7 +242,7 @@ function MovieInfo() {
               <ButtonGroup
                 size="small"
                 variant="outlined !important"
-                classname={classes.btnGroup}
+                className={classes.btnGroup}
               >
                 <Button
                   onClick={addToFavorites}
