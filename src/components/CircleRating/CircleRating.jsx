@@ -9,7 +9,6 @@ const CircleRating = ({ rating }) => {
   return (
     <div className={classes.circleRating}>
       <CircularProgressbar
-        //className={classes.circularProgressbar_text}
         value={rating}
         maxValue={10}
         text={rating}
