@@ -2,7 +2,7 @@
   "name": "movie-hub",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://moviehub-beryl.vercel.app/",
+  "homepage": "https://moviehub-ten.vercel.app",
   "dependencies": {
     "@alan-ai/alan-sdk-web": "^1.8.43",
     "@emotion/react": "^11.10.6",
