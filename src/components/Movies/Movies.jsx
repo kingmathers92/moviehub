@@ -16,7 +16,7 @@ function Movies() {
     (state) => state.genreOrCategory
   );
   const { data, error, isFetching } = useGetMoviesQuery({
-    genreIdOrCategoryName: "popular",
+    genreIdOrCategoryName,
     page,
     searchQuery,
   });
