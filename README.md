@@ -147,7 +147,7 @@ Distributed under the MIT License. See `LICENSE.md` for more information.
 
 ## Contact
 
-Jovan - [@kingmathers92](https://github.com/kingmathers92/)
+Khaled - [@kingmathers92](https://github.com/kingmathers92/)
 
 Project Link: [https://github.com/kingmathers92/moviehub](https://github.com/kingmathers92/moviehub)
 
