@@ -13,6 +13,7 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
+    quotes: [2, "double"],
     "import/extensions": 0,
     "react/prop-types": 0,
     "linebreak-style": 0,
