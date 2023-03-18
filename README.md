@@ -104,6 +104,12 @@ Setup:
    REACT_APP_TMDB_KEY=<put your key here>
    ```
 
+6. Enter your Alan AI key in your `.env`.
+
+   ```sh
+   REACT_APP_ALAN_KEY=<put your key here>
+   ```
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
