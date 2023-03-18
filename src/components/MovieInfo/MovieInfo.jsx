@@ -239,11 +239,7 @@ function MovieInfo() {
               </ButtonGroup>
             </Grid>
             <Grid item xs={12} sm={6} className={classes.buttonContainer}>
-              <ButtonGroup
-                size="small"
-                variant="outlined !important"
-                className={classes.btnGroup}
-              >
+              <ButtonGroup size="small" variant="outlined !important">
                 <Button
                   onClick={addToFavorites}
                   endIcon={
