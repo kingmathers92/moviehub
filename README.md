@@ -51,7 +51,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]]()
+![](/src/assets/images/screenshot.png)
 
 Moviehub combines the desire to unleash powerful creativity with the industry's most advanced JavaScript tools including React.js, Redux, Material UI, Alan AI, and more.
 
