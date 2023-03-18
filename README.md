@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/kingmathers92/moviehub">
-    <img src="src/assets/images/lightLogo.png" alt="Moviehub" width="252" height="85">
+    <img src="https://fontmeme.com/permalink/230307/96ba8bc6614a796a8a36a76418fca378.png" alt="Moviehub" width="252" height="85">
   </a>
 
   <h2 align="center">MovieHub</h2>
@@ -17,7 +17,7 @@
     <a href="https://github.com/kingmathers92/moviehub"><strong>Explore the project »</strong></a>
     <br />
     <br />
-    <a href="">View Demo Site</a>
+    <a href="https://github.com/kingmathers92/moviehub">View Demo Site</a>
     ·
     <a href="https://github.com/kingmathers92/moviehub/issues">Report Bug</a>
     ·
