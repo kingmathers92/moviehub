@@ -1,7 +1,10 @@
 import React, { useState, useMemo, createContext, useEffect } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-export const DarkModeContext = createContext();
+export const DarkModeContext = createContext({
+  setMode: () => {},
+  toggleColorMode: () => {},
+});
 
 function ToggleTheme({ children }) {
   const [mode, setMode] = useState(() =>
@@ -41,7 +44,7 @@ function ToggleTheme({ children }) {
   );
 
   return (
-    <DarkModeContext.Provider value={{ toggleColorMode }}>
+    <DarkModeContext.Provider value={{ mode, setMode, toggleColorMode }}>
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </DarkModeContext.Provider>
   );
