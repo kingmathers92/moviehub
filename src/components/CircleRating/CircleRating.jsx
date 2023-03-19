@@ -3,7 +3,7 @@ import "react-circular-progressbar/dist/styles.css";
 
 import useStyles from "./styles";
 
-const CircleRating = ({ rating }) => {
+function CircleRating({ rating }) {
   const classes = useStyles();
 
   return (
@@ -22,6 +22,6 @@ const CircleRating = ({ rating }) => {
       />
     </div>
   );
-};
+}
 
 export default CircleRating;

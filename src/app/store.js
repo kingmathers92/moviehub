@@ -9,6 +9,5 @@ export default configureStore({
     genreOrCategory: genreOrCategoryReducer,
     user: userReducer,
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(tmdbApi.middleware),
+  middleware: getDefaultMiddleware().concat(tmdbApi.middleware),
 });
