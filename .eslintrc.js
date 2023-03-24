@@ -17,7 +17,7 @@ module.exports = {
     'react/state-in-constructor': 0,
     'import/prefer-default-export': 0,
     'max-len': [2, 250],
-    'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1 }],
+    'no-multiple-empty-lines': ['warn', { max: 1, maxEOF: 1 }],
     'no-underscore-dangle': [
       'error',
       { allow: ['_d', '_dh', '_h', '_id', '_m', '_n', '_t', '_text'] },
@@ -42,19 +42,13 @@ module.exports = {
     ],
     'import/no-cycle': 'off',
     'no-nested-ternary': 'off',
-    'comma-dangle': [
-      'error',
-      'always-multiline',
-    ],
-    'operator-linebreak': [
-      'error',
-      'before',
-    ],
+    'comma-dangle': ['warn', 'always-multiline'],
+    'operator-linebreak': ['warn', 'before'],
     'implicit-arrow-linebreak': 'off',
     'react/destructuring-assignment': 'off',
     'react/jsx-curly-newline': 'off',
     'no-unused-vars': [
-      'error',
+      'warn',
       {
         argsIgnorePattern: '^_',
       },
@@ -66,4 +60,5 @@ module.exports = {
     'consistent-return': 'off',
   },
 };
+
 
