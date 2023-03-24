@@ -40,5 +40,30 @@ module.exports = {
         aspects: ['noHref', 'invalidHref', 'preferButton'],
       },
     ],
+    'import/no-cycle': 'off',
+    'no-nested-ternary': 'off',
+    'comma-dangle': [
+      'error',
+      'always-multiline',
+    ],
+    'operator-linebreak': [
+      'error',
+      'before',
+    ],
+    'implicit-arrow-linebreak': 'off',
+    'react/destructuring-assignment': 'off',
+    'react/jsx-curly-newline': 'off',
+    'no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_',
+      },
+    ],
+    camelcase: 'off',
+    'no-confusing-arrow': 'off',
+    'function-paren-newline': 'off',
+    'react/jsx-no-constructed-context-values': 'off',
+    'consistent-return': 'off',
   },
 };
+
