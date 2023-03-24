@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext } from 'react';
 import {
   Divider,
   List,
@@ -10,27 +10,27 @@ import {
   CircularProgress,
   IconButton,
   useMediaQuery,
-} from "@mui/material";
-import { Brightness4, Brightness7 } from "@mui/icons-material";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import useStyles from "./styles";
-import { useGetGenresQuery } from "../../services/TMDB";
-import { selectGenreOrCategory } from "../../features/genreOrCategory";
-import genreIcons from "../../assets/genres";
-import { useTheme } from "@mui/material/styles";
-import { DarkModeContext } from "../../utils/ToggleTheme";
+} from '@mui/material';
+import { Brightness4, Brightness7 } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useTheme } from '@mui/material/styles';
+import useStyles from './styles';
+import { useGetGenresQuery } from '../../services/TMDB';
+import { selectGenreOrCategory } from '../../features/genreOrCategory';
+import genreIcons from '../../assets/genres';
+import { DarkModeContext } from '../../utils/ToggleTheme';
 
 const categories = [
-  { label: "Popular", value: "popular" },
-  { label: "Top Rated", value: "top_rated" },
-  { label: "Upcoming", value: "upcoming" },
+  { label: 'Popular', value: 'popular' },
+  { label: 'Top Rated', value: 'top_rated' },
+  { label: 'Upcoming', value: 'upcoming' },
 ];
 
 function Sidebar({ setMobileOpen }) {
   const theme = useTheme();
   const darkMode = useContext(DarkModeContext);
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery('(max-width:600px)');
 
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -52,7 +52,7 @@ function Sidebar({ setMobileOpen }) {
           sx={{ ml: 1 }}
           onClick={darkMode.toggleColorMode}
         >
-          {theme.palette.mode === "dark" ? <Brightness7 /> : <Brightness4 />}
+          {theme.palette.mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
         </IconButton>
       )}
       <List>

@@ -1,5 +1,5 @@
-import React, { useState, useMemo, createContext, useEffect } from "react";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import React, { useState, useMemo, createContext, useEffect } from 'react';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 export const DarkModeContext = createContext({
   setMode: () => {},
@@ -9,22 +9,22 @@ export const DarkModeContext = createContext({
 function ToggleTheme({ children }) {
   const [mode, setMode] = useState(() =>
     window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light"
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light'
   );
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handleChange = (e) => {
-      setMode(e.matches ? "dark" : "light");
+      setMode(e.matches ? 'dark' : 'light');
     };
-    mediaQuery.addEventListener("change", handleChange);
-    return () => mediaQuery.removeEventListener("change", handleChange);
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
   const toggleColorMode = () => {
-    setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+    setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
   };
 
   const theme = useMemo(
@@ -33,10 +33,10 @@ function ToggleTheme({ children }) {
         palette: {
           mode,
           primary: {
-            main: "#ffffff",
+            main: '#ffffff',
           },
           secondary: {
-            main: "#f48fb1",
+            main: '#f48fb1',
           },
         },
       }),

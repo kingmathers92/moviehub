@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { Box, Button, CircularProgress, Grid, Typography } from "@mui/material";
-import { useNavigate, useParams } from "react-router-dom";
-import { ArrowBack } from "@mui/icons-material";
+import React, { useState } from 'react';
+import { Box, Button, CircularProgress, Grid, Typography } from '@mui/material';
+import { useNavigate, useParams } from 'react-router-dom';
+import { ArrowBack } from '@mui/icons-material';
 
-import useStyles from "./styles";
+import useStyles from './styles';
 import {
   useGetActorQuery,
   useGetMoviesByActorIdQuery,
-} from "../../services/TMDB";
-import { MovieList, Pagination } from "../index";
+} from '../../services/TMDB';
+import { MovieList, Pagination } from '../index';
 
 function Actors() {
   const classes = useStyles();
@@ -55,9 +55,9 @@ function Actors() {
           lg={7}
           xl={8}
           style={{
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "column",
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'column',
           }}
         >
           <Typography variant="h2" gutterBottom>
@@ -67,7 +67,7 @@ function Actors() {
             Born: {new Date(data?.birthday).toDateString()}
           </Typography>
           <Typography variant="body1" align="justify" paragraph>
-            {data?.biography || "Sorry, no biography yet..."}
+            {data?.biography || 'Sorry, no biography yet...'}
           </Typography>
           <Box className={classes.btns}>
             <Button

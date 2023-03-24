@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import {
   Modal,
   Typography,
@@ -8,7 +8,7 @@ import {
   Box,
   CircularProgress,
   Rating,
-} from "@mui/material";
+} from '@mui/material';
 import {
   Movie as MovieIcon,
   Theaters,
@@ -18,20 +18,20 @@ import {
   FavoriteBorderOutlined,
   Remove,
   ArrowBack,
-} from "@mui/icons-material";
-import { Link, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
+} from '@mui/icons-material';
+import { Link, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
 
-import useStyles from "./styles";
-import { MovieList } from "../index";
+import useStyles from './styles';
+import { MovieList } from '../index';
 import {
   useGetMovieQuery,
   useGetRecommendationsQuery,
   useGetListQuery,
-} from "../../services/TMDB";
-import { selectGenreOrCategory } from "../../features/genreOrCategory";
-import genreIcons from "../../assets/genres";
+} from '../../services/TMDB';
+import { selectGenreOrCategory } from '../../features/genreOrCategory';
+import genreIcons from '../../assets/genres';
 
 function MovieInfo() {
   const classes = useStyles();
@@ -41,19 +41,19 @@ function MovieInfo() {
 
   const { data, error, isFetching } = useGetMovieQuery(id);
   const { data: favoriteMovies } = useGetListQuery({
-    listName: "favorite/movies",
+    listName: 'favorite/movies',
     accountId: user.id,
-    sessionId: localStorage.getItem("session_id"),
+    sessionId: localStorage.getItem('session_id'),
     page: 1,
   });
   const { data: watchlistMovies } = useGetListQuery({
-    listName: "watchlist/movies",
+    listName: 'watchlist/movies',
     accountId: user.id,
-    sessionId: localStorage.getItem("session_id"),
+    sessionId: localStorage.getItem('session_id'),
     page: 1,
   });
   const { data: recommendations } = useGetRecommendationsQuery({
-    list: "/recommendations",
+    list: '/recommendations',
     movie_id: id,
   });
 
@@ -76,9 +76,9 @@ function MovieInfo() {
     await axios.post(
       `https://api.themoviedb.org/3/account/${user.id}/favorite?api_key=${
         process.env.REACT_APP_TMDB_KEY
-      }&session_id=${localStorage.getItem("session_id")}`,
+      }&session_id=${localStorage.getItem('session_id')}`,
       {
-        media_type: "movie",
+        media_type: 'movie',
         media_id: id,
         favorite: !isMovieFavorited,
       }
@@ -91,9 +91,9 @@ function MovieInfo() {
     await axios.post(
       `https://api.themoviedb.org/3/account/${user.id}/watchlist?api_key=${
         process.env.REACT_APP_TMDB_KEY
-      }&session_id=${localStorage.getItem("session_id")}`,
+      }&session_id=${localStorage.getItem('session_id')}`,
       {
-        media_type: "movie",
+        media_type: 'movie',
         media_id: id,
         watchlist: !isMovieWatchlisted,
       }
@@ -129,7 +129,7 @@ function MovieInfo() {
       </Grid>
       <Grid item container direction="column" lg={7}>
         <Typography variant="h3" align="center" gutterBottom>
-          {data?.title} ({data.release_date.split("-")[0]})
+          {data?.title} ({data.release_date.split('-')[0]})
         </Typography>
         <Typography variant="h5" align="center" gutterBottom>
           {data?.tagline}
@@ -140,7 +140,7 @@ function MovieInfo() {
             <Typography
               gutterBottom
               variant="subtitle1"
-              style={{ marginLeft: "10px" }}
+              style={{ marginLeft: '10px' }}
             >
               {data?.vote_average} / 10
             </Typography>
@@ -169,10 +169,10 @@ function MovieInfo() {
             </Link>
           ))}
         </Grid>
-        <Typography variant="h5" gutterBottom style={{ marginTop: "20px" }}>
+        <Typography variant="h5" gutterBottom style={{ marginTop: '20px' }}>
           Plot
         </Typography>
-        <Typography style={{ marginBottom: "2rem" }}>
+        <Typography style={{ marginBottom: '2rem' }}>
           {data?.overview}
         </Typography>
         <Typography variant="h5" gutterBottom>
@@ -191,7 +191,7 @@ function MovieInfo() {
                       md={2}
                       component={Link}
                       to={`/actors/${character.id}`}
-                      style={{ textDecoration: "none" }}
+                      style={{ textDecoration: 'none' }}
                     >
                       <img
                         className={classes.castImage}
@@ -202,14 +202,14 @@ function MovieInfo() {
                         {character?.name}
                       </Typography>
                       <Typography color="textSecondary" align="center">
-                        {character.character.split("/")[0]}
+                        {character.character.split('/')[0]}
                       </Typography>
                     </Grid>
                   )
               )
               .slice(0, 6)}
         </Grid>
-        <Grid item container style={{ marginTop: "2rem" }}>
+        <Grid item container style={{ marginTop: '2rem' }}>
           <div className={classes.buttonContainer}>
             <Grid item xs={12} sm={6} className={classes.buttonContainer}>
               <ButtonGroup size="small" variant="outlined !important">
@@ -246,7 +246,7 @@ function MovieInfo() {
                     isMovieFavorited ? <FavoriteBorderOutlined /> : <Favorite />
                   }
                 >
-                  {isMovieFavorited ? "Unfavorite" : "Favorite"}
+                  {isMovieFavorited ? 'Unfavorite' : 'Favorite'}
                 </Button>
                 <Button
                   onClick={addToWatchList}
@@ -256,14 +256,14 @@ function MovieInfo() {
                 </Button>
                 <Button
                   endIcon={<ArrowBack />}
-                  sx={{ borderColor: "primary.main" }}
+                  sx={{ borderColor: 'primary.main' }}
                 >
                   <Typography
                     variant="subtitle2"
                     component={Link}
                     to="/"
                     color="inherit"
-                    sx={{ textDecoration: "none" }}
+                    sx={{ textDecoration: 'none' }}
                   >
                     Back
                   </Typography>

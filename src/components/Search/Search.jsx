@@ -1,20 +1,19 @@
-import React, { useState } from "react";
-import SearchIcon from "@mui/icons-material/Search";
-import InputBase from "@mui/material/InputBase";
-import { useDispatch } from "react-redux";
+import React, { useState } from 'react';
+import SearchIcon from '@mui/icons-material/Search';
+import InputBase from '@mui/material/InputBase';
+import { useDispatch } from 'react-redux';
 
-import useStyles from "./styles";
-import { searchMovie } from "../../features/genreOrCategory";
+import useStyles from './styles';
+import { searchMovie } from '../../features/genreOrCategory';
 
 function Search() {
   const classes = useStyles();
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
   const dispatch = useDispatch();
 
   const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       dispatch(searchMovie(query));
-      console.log(searchMovie);
     }
   };
 

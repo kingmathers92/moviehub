@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from 'react';
 import {
   AppBar,
   IconButton,
@@ -7,29 +7,29 @@ import {
   Button,
   Avatar,
   useMediaQuery,
-} from "@mui/material";
+} from '@mui/material';
 import {
   Menu,
   AccountCircle,
   Brightness4,
   Brightness7,
-} from "@mui/icons-material";
-import { useTheme } from "@mui/material/styles";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+} from '@mui/icons-material';
+import { useTheme } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
-import useStyles from "./styles";
-import { Sidebar, Search } from "../index";
-import { setUser } from "../../features/auth";
-import { fetchToken, createSessionId, moviesApi } from "../../utils/index";
-import { DarkModeContext } from "../../utils/ToggleTheme";
-import mobileLogo from "../../assets/images/logo.ico";
-const logo =
-  "https://fontmeme.com/permalink/230307/96ba8bc6614a796a8a36a76418fca378.png";
+import useStyles from './styles';
+import { Sidebar, Search } from '../index';
+import { setUser } from '../../features/auth';
+import { fetchToken, createSessionId, moviesApi } from '../../utils/index';
+import { DarkModeContext } from '../../utils/ToggleTheme';
+import mobileLogo from '../../assets/images/logo.ico';
+
+const logo = 'https://fontmeme.com/permalink/230307/96ba8bc6614a796a8a36a76418fca378.png';
 
 function Navbar() {
   const classes = useStyles();
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery('(max-width:600px)');
   const theme = useTheme();
   const dispatch = useDispatch();
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -37,8 +37,8 @@ function Navbar() {
 
   const darkMode = useContext(DarkModeContext);
 
-  const token = localStorage.getItem("request_token");
-  const sessionIdFromLocalStorage = localStorage.getItem("session_id");
+  const token = localStorage.getItem('request_token');
+  const sessionIdFromLocalStorage = localStorage.getItem('session_id');
 
   useEffect(() => {
     const logInUser = async () => {
@@ -80,7 +80,7 @@ function Navbar() {
                 sx={{ ml: 1 }}
                 onClick={darkMode.toggleColorMode}
               >
-                {theme.palette.mode === "dark" ? (
+                {theme.palette.mode === 'dark' ? (
                   <Brightness7 />
                 ) : (
                   <Brightness4 />
@@ -91,7 +91,7 @@ function Navbar() {
               <IconButton
                 color="inherit"
                 edge="start"
-                style={{ outline: "none" }}
+                style={{ outline: 'none' }}
                 onClick={() =>
                   setMobileOpen((prevMobileOpen) => !prevMobileOpen)
                 }

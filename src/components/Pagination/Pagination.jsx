@@ -1,7 +1,7 @@
-import React from "react";
-import { Typography, Button } from "@mui/material";
+import React from 'react';
+import { Typography, Button } from '@mui/material';
 
-import useStyles from "./styles";
+import useStyles from './styles';
 
 function Pagination({ currentPage, setPage, totalPages }) {
   const classes = useStyles();

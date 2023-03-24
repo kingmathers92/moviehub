@@ -1,24 +1,24 @@
-import React, { useEffect } from "react";
-import { Box, Button, Typography } from "@mui/material";
-import { ExitToApp } from "@mui/icons-material";
-import { useSelector } from "react-redux";
+import React, { useEffect } from 'react';
+import { Box, Button, Typography } from '@mui/material';
+import { ExitToApp } from '@mui/icons-material';
+import { useSelector } from 'react-redux';
 
-import { useGetListQuery } from "../../services/TMDB";
-import { RatedCards } from "../index";
+import { useGetListQuery } from '../../services/TMDB';
+import { RatedCards } from '../index';
 
 function Profile() {
   const { user } = useSelector((state) => state.user);
   const { data: favoriteMovies, refetch: refetchFavorites } = useGetListQuery({
-    listName: "favorite/movies",
+    listName: 'favorite/movies',
     accountId: user.id,
-    sessionId: localStorage.getItem("session_id"),
+    sessionId: localStorage.getItem('session_id'),
     page: 1,
   });
   const { data: watchlistMovies, refetch: refetchWatchlisted } =
     useGetListQuery({
-      listName: "watchlist/movies",
+      listName: 'watchlist/movies',
       accountId: user.id,
-      sessionId: localStorage.getItem("session_id"),
+      sessionId: localStorage.getItem('session_id'),
       page: 1,
     });
 
@@ -29,7 +29,7 @@ function Profile() {
 
   const logout = () => {
     localStorage.clear();
-    window.location.href = "/";
+    window.location.href = '/';
   };
 
   return (

@@ -1,16 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 export const genreOrCategory = createSlice({
-  name: "genreOrCategory",
+  name: 'genreOrCategory',
   initialState: {
-    genreIdOrCategoryName: "",
+    genreIdOrCategoryName: '',
     page: 1,
-    searchQuery: "",
+    searchQuery: '',
   },
   reducers: {
     selectGenreOrCategory: (state, action) => {
       state.genreIdOrCategoryName = action.payload;
-      state.searchQuery = "";
+      state.searchQuery = '';
     },
     searchMovie: (state, action) => {
       state.searchQuery = action.payload;

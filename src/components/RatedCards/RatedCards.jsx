@@ -1,9 +1,9 @@
-import React from "react";
-import { Typography, Box } from "@mui/material";
-import { Remove } from "@mui/icons-material";
+import React from 'react';
+import { Typography, Box } from '@mui/material';
+import { Remove } from '@mui/icons-material';
 
-import useStyles from "./styles";
-import { Movie } from "../index";
+import useStyles from './styles';
+import { Movie } from '../index';
 
 function RatedCards({ title, movies }) {
   const classes = useStyles();

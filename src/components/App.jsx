@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
-import { CssBaseline } from "@mui/material";
-import { Routes, Route } from "react-router-dom";
-import { Navbar, Movies, MovieInfo, Actors, Profile } from "./index";
-import useStyles from "./styles";
-import ToggleTheme from "../utils/ToggleTheme";
-import useAlan from "./Alan";
+import React, { useRef } from 'react';
+import { CssBaseline } from '@mui/material';
+import { Routes, Route } from 'react-router-dom';
+import { Navbar, Movies, MovieInfo, Actors, Profile } from './index';
+import useStyles from './styles';
+import ToggleTheme from '../utils/ToggleTheme';
+import useAlan from './Alan';
 
 function App() {
   const classes = useStyles();
